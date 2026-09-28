@@ -83,7 +83,7 @@
 
     document.getElementById('add').addEventListener('click', () => grid.form.openNew({ category: 'Office', quantity: 0 }));
     grid.on('form:saved', (e) => { if (e.created) status.textContent = grid.rows.count() + ' products'; });
-    grid.on('form:error', (e) => { status.textContent = 'Could not save: ' + (e.reason || e.message || 'unknown error'); });
+    grid.on('form:error', (e) => { status.textContent = 'Could not save: ' + ((e.error && e.error.message) || e.error || 'unknown error'); });
 
     api('GET')
       .then((data) => { grid.rows.load(data.items); status.textContent = data.count + ' products'; })

@@ -103,7 +103,7 @@
     document.getElementById('add').addEventListener('click', () => grid.form.openNew({ category: 'Office', quantity: 0 }));
     document.getElementById('full').addEventListener('click', () => grid.maximise.toggle());
     grid.on('form:saved', (e) => { status.textContent = grid.rows.count() + ' products' + (e.created ? ', one added' : ', one updated'); });
-    grid.on('form:error', (e) => { status.textContent = 'Could not save: ' + (e.reason || e.message || 'unknown error'); });
+    grid.on('form:error', (e) => { status.textContent = 'Could not save: ' + ((e.error && e.error.message) || e.error || 'unknown error'); });
     grid.on('cell:reverted', (e) => { status.textContent = 'The server refused the change to ' + e.colId + (e.reason ? ': ' + e.reason : ''); });
 
     api('GET')
