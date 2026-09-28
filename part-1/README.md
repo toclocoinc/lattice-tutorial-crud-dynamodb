@@ -1,8 +1,8 @@
 # Part 1: a web page that reads products from DynamoDB
 
 Source for part 1 of the Lattice Grid CRUD tutorial. The step-by-step guide is
-at https://www.latticegrid.dev/docs/tutorials/crud-dynamodb-part-1/ and this
-folder holds everything it asks you to paste or run.
+on the Lattice Grid site and in [`TUTORIAL.md`](TUTORIAL.md) beside this file;
+this folder holds everything it asks you to paste or run.
 
 | Folder | What it is |
 | --- | --- |
