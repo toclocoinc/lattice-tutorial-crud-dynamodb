@@ -1,0 +1,13 @@
+{
+  "name": "lattice-tutorial-part-1-seed",
+  "private": true,
+  "type": "module",
+  "description": "Uploads the demo products into the DynamoDB table for part 1 of the Lattice Grid CRUD tutorial.",
+  "scripts": {
+    "seed": "node seed.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.700.0",
+    "@aws-sdk/lib-dynamodb": "^3.700.0"
+  }
+}
