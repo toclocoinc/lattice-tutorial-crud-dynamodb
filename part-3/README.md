@@ -12,3 +12,14 @@ The IAM policy from part 2 already allows `UpdateItem`, so nothing changes in
 IAM. The Function URL's CORS needs PATCH added to its allowed methods.
 
 Needs Lattice Grid 1.76.0 or later.
+
+## Test
+
+`test/lambda.test.mjs` checks that a PATCH with a blank, whitespace or null `name`
+returns 400 `{ "error": "name is required" }` and sends nothing to DynamoDB. The
+AWS SDK is stubbed, so nothing needs installing and no AWS call is made:
+
+```
+cd part-3
+node --import ./test/register.mjs --test test/
+```
