@@ -21,5 +21,5 @@ AWS SDK is stubbed, so nothing needs installing and no AWS call is made:
 
 ```
 cd part-3
-node --import ./test/register.mjs --test test/
+node --import ./test/register.mjs --test test/lambda.test.mjs
 ```
