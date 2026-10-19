@@ -65,6 +65,8 @@ export const handler = async (event) => {
       names['#' + field] = field; values[':' + field] = v; sets.push(`#${field} = :${field}`);
     }
     if (!sets.length) return json(400, { error: 'Nothing to change' });
+    // A product always has a name: refuse a blank one before anything is written.
+    if ('name' in changes && !String(changes.name ?? '').trim()) return json(400, { error: 'name is required' });
     names['#updated'] = 'updated'; values[':updated'] = new Date().toISOString().slice(0, 10); sets.push('#updated = :updated');
     try {
       const out = await db.send(new UpdateCommand({
